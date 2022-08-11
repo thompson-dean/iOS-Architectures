@@ -96,8 +96,8 @@
 		2A7DEE7128A1DDF700048320 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				2A7DEE6728A1DDB600048320 /* HomeViewController.swift */,
 				2A4DF81028A330AD0063F9A7 /* Home.storyboard */,
+				2A7DEE6728A1DDB600048320 /* HomeViewController.swift */,
 				2A7DEE6928A1DDC700048320 /* HomeInteractor.swift */,
 				2A7DEE6B28A1DDCF00048320 /* HomePresenter.swift */,
 				2A7DEE6F28A1DDE900048320 /* HomeRouter.swift */,
@@ -108,8 +108,8 @@
 		2A7DEE7228A1DDFE00048320 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				2A7DEE7328A1DE3500048320 /* DetailViewController.swift */,
 				2A4DF81228A331310063F9A7 /* Detail.storyboard */,
+				2A7DEE7328A1DE3500048320 /* DetailViewController.swift */,
 				2A7DEE7528A1DE3E00048320 /* DetailInteractor.swift */,
 				2A7DEE7728A1DE4500048320 /* DetailPresenter.swift */,
 				2A7DEE7B28A1DE5300048320 /* DetailRouter.swift */,
@@ -184,6 +184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A7DEE6328A13A5200048320 /* Build configuration list for PBXNativeTarget "VIPERArchitecture" */;
 			buildPhases = (
+				2A71AD9F28A4EE650061E762 /* Run SwiftLint */,
 				2A7DEE4B28A13A5100048320 /* Sources */,
 				2A7DEE4C28A13A5100048320 /* Frameworks */,
 				2A7DEE4D28A13A5100048320 /* Resources */,
@@ -243,6 +244,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A71AD9F28A4EE650061E762 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d /opt/homebrew/bin; then\n    PATH=/opt/homebrew/bin/:$PATH\nfi\n\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A7DEE4B28A13A5100048320 /* Sources */ = {

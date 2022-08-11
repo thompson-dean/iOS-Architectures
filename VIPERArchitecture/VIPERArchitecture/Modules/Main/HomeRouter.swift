@@ -8,19 +8,18 @@
 import Foundation
 import UIKit
 
-protocol HomeRouterInterface {
-
-    func navigateToShowDetails(id: String)
-}
-
-class HomeRouter {
+protocol HomeRouterProtocol {
+    static func createHomeModule() -> UIViewController
+    
+    //Presenter -> Router functions
     
 }
 
-extension HomeRouter: HomeRouterInterface {
-    func navigateToShowDetails(id: String) {
-        print(id)
+class HomeRouter: HomeRouterProtocol {
+    static func createHomeModule() -> UIViewController {
+        
     }
     
     
 }
+

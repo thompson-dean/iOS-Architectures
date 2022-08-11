@@ -7,37 +7,27 @@
 
 import UIKit
 
-
-protocol HomeViewInterface {
-    func reloadData()
+protocol HomeViewProtocol {
+    var presenter: HomePresenterProtocol? { get set }
+    
+    //Presenter ->  View functions
+    
 }
 
 class HomeViewController: UIViewController {
     
-    var presenter: HomePresenterInterface!
+
     
-    
-    @IBOutlet var homeTableView: UITableView! {
-        didSet {
-            homeTableView.delegate = self
-            homeTableView.dataSource = self
-        }
-    }
+    @IBOutlet var homeTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.loadQuotes()
-    
+        
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
     }
 }
 
-extension HomeViewController: HomeViewInterface {
-    func reloadData() {
-        homeTableView.reloadData()
-    }
-    
-    
-}
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -47,19 +37,15 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter.numberOfItems
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = presenter.item(at: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = item.quote
+        cell.textLabel?.text = "jazz"
         
         return cell
     }
     
-    
 }
-
-

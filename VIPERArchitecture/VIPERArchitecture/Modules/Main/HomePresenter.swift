@@ -7,70 +7,40 @@
 
 import Foundation
 
-
-protocol HomePresenterInterface{
-    var numberOfItems: Int { get }
+protocol HomePresenterProtocol {
+    var view: HomeViewProtocol? { get set }
+    var interactor: HomeInteractorInputProtocol? { get set }
+    var router: HomeRouterProtocol? { get set }
     
-    func item(at indexPath: IndexPath) -> Quote
-    func itemSelected(at indexPath: IndexPath)
-    func loadQuotes()
+    // View -> Presenter functions
+    
 }
 
-final class HomePresenter {
-    
-    //MARK: - Properties
-    
-    private let view: HomeViewInterface
-    private let interactor: HomeInteractorInterface
-//    private let wireframe: HomeWireframeInterface
+protocol HomeInteractorOutputProtocol {
+    // Interactor -> Presenter functions
+    func didReceiveQuotes(_ quotes: [Quote])
+    func onError()
+}
 
-    private var items: [Quote] = [] {
-        didSet {
-            view.reloadData()
-        }
-    }
-
+class HomePresenter: HomePresenterProtocol {
+    weak var view: HomeViewProtocol?
     
-    //MARK: - Lifecycle
-    init(
-        view: HomeViewInterface,
-        interactor: HomeInteractorInterface
-//        wireframe: HomeWireframeInterface
-    ) {
-        self.view = view
-        self.interactor = interactor
-//        self.wireframe = wireframe
-    }
+    var interactor: HomeInteractorInputProtocol?
+    
+    var router: HomeRouterProtocol?
+    
 
 }
 
-//MARK: - extensions
-
-extension HomePresenter: HomePresenterInterface {
-    var numberOfItems: Int {
-        items.count
+extension HomePresenter: HomeInteractorOutputProtocol {
+    func didReceiveQuotes(_ quotes: [Quote]) {
+        
     }
-
-    func item(at indexPath: IndexPath) -> Quote {
-        items[indexPath.row]
+    
+    func onError() {
+        
     }
-
-    func itemSelected(at indexPath: IndexPath) {
-        let quote = items[indexPath.row]
-        print(quote)
-    }
-
-    func loadQuotes() {
-        interactor.getShows { result in
-            switch result {
-                
-            case .success(let quotes):
-                self.items = quotes
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
+    
+    
 }
-
 

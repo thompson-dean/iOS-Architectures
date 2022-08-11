@@ -7,20 +7,14 @@
 
 import Foundation
 
-protocol HomeInteractorInterface {
-    func getShows(_ completion: @escaping ((Result<[Quote], Error>) -> Void))
+protocol HomeInteractorInputProtocol {
+    var presenter: HomeInteractorOutputProtocol? { get set }
+    
+    // Presenter -> Interactor
 }
 
-final class HomeInteractor: HomeInteractorInterface {
+class HomeInteractor: HomeInteractorInputProtocol {
+    weak var presenter: HomeInteractorOutputProtocol?
     
-    private let apiService: APIService
-    
-    init(apiService: APIService = .shared) {
-        self.apiService = apiService
-    }
-    
-    func getShows(_ completion: @escaping ((Result<[Quote], Error>) -> Void)) {
-        apiService.fetchPosts(completion: completion)
-    }
 
 }
