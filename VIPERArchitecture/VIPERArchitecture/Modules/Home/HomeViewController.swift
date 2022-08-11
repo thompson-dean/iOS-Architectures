@@ -7,18 +7,13 @@
 
 import UIKit
 
-protocol HomeViewProtocol: AnyObject {
-    var presenter: HomePresenterProtocol? { get set }
-    
-    // Presenter ->  View functions
-    
-}
-
-class HomeViewController: UIViewController {
-    
-
+class HomeViewController: UIViewController, HomeViewProtocol {
     
     @IBOutlet var homeTableView: UITableView!
+    
+    var presenter: HomePresenterProtocol?
+    
+    var quotes: [Quote] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +21,11 @@ class HomeViewController: UIViewController {
         homeTableView.delegate = self
         homeTableView.dataSource = self
     }
+    
+    func showQuotes(with quotes: [Quote]) {
+        self.quotes = quotes
+    }
 }
-
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -37,13 +35,13 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return quotes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.text = "jazz"
+        let quote = quotes[indexPath.row]
+        cell.textLabel?.text = quote.quote
         
         return cell
     }
