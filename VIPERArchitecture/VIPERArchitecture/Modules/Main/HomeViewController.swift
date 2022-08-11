@@ -7,10 +7,10 @@
 
 import UIKit
 
-protocol HomeViewProtocol {
+protocol HomeViewProtocol: AnyObject {
     var presenter: HomePresenterProtocol? { get set }
     
-    //Presenter ->  View functions
+    // Presenter ->  View functions
     
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol HomePresenterProtocol {
+protocol HomePresenterProtocol: AnyObject {
     var view: HomeViewProtocol? { get set }
     var interactor: HomeInteractorInputProtocol? { get set }
     var router: HomeRouterProtocol? { get set }
@@ -16,7 +16,7 @@ protocol HomePresenterProtocol {
     
 }
 
-protocol HomeInteractorOutputProtocol {
+protocol HomeInteractorOutputProtocol: AnyObject {
     // Interactor -> Presenter functions
     func didReceiveQuotes(_ quotes: [Quote])
     func onError()

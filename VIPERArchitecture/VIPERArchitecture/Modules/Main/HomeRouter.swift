@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol HomeRouterProtocol {
+protocol HomeRouterProtocol: AnyObject {
     static func createHomeModule() -> UIViewController
     
     //Presenter -> Router functions
@@ -17,7 +17,7 @@ protocol HomeRouterProtocol {
 
 class HomeRouter: HomeRouterProtocol {
     static func createHomeModule() -> UIViewController {
-        
+        HomeViewController()
     }
     
     

@@ -7,10 +7,10 @@
 
 import Foundation
 
-protocol HomeInteractorInputProtocol {
+protocol HomeInteractorInputProtocol: AnyObject {
     var presenter: HomeInteractorOutputProtocol? { get set }
     
-    // Presenter -> Interactor
+    // Presenter -> Interactor functions
 }
 
 class HomeInteractor: HomeInteractorInputProtocol {
