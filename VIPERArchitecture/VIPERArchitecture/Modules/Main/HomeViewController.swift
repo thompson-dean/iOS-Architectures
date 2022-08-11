@@ -7,30 +7,36 @@
 
 import UIKit
 
+
+protocol HomeViewInterface {
+    func reloadData()
+}
+
 class HomeViewController: UIViewController {
     
-    let apiService = APIService()
+    var presenter: HomePresenterInterface!
     
-    @IBOutlet var homeTableView: UITableView!
     
-    var quotes: [Quote] = []
+    @IBOutlet var homeTableView: UITableView! {
+        didSet {
+            homeTableView.delegate = self
+            homeTableView.dataSource = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("VIEWDIDLOAD")
-        apiService.fetchPosts { quotes in
-            DispatchQueue.main.async {
-                self.quotes = quotes
-                self.homeTableView.reloadData()
-            }
-
-        }
-        
-        homeTableView.delegate = self
-        homeTableView.dataSource = self
+        presenter.loadQuotes()
     
     }
+}
+
+extension HomeViewController: HomeViewInterface {
+    func reloadData() {
+        homeTableView.reloadData()
+    }
+    
+    
 }
 
 extension HomeViewController: UITableViewDelegate {
@@ -41,13 +47,14 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        quotes.count
+        presenter.numberOfItems
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = presenter.item(at: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = quotes[indexPath.row].quote
+        cell.textLabel?.text = item.quote
         
         return cell
     }

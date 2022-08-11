@@ -6,3 +6,21 @@
 //
 
 import Foundation
+import UIKit
+
+protocol HomeRouterInterface {
+
+    func navigateToShowDetails(id: String)
+}
+
+class HomeRouter {
+    
+}
+
+extension HomeRouter: HomeRouterInterface {
+    func navigateToShowDetails(id: String) {
+        print(id)
+    }
+    
+    
+}

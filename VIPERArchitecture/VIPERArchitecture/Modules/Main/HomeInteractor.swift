@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+protocol HomeInteractorInterface {
+    func getShows(_ completion: @escaping ((Result<[Quote], Error>) -> Void))
+}
+
+final class HomeInteractor: HomeInteractorInterface {
+    
+    private let apiService: APIService
+    
+    init(apiService: APIService = .shared) {
+        self.apiService = apiService
+    }
+    
+    func getShows(_ completion: @escaping ((Result<[Quote], Error>) -> Void)) {
+        apiService.fetchPosts(completion: completion)
+    }
+
+}
