@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+class DetailPresenter: DetailPresenterProtocol {
+    var view: DetailViewProtocol?
+    var router: DetailRouterProtocol?
+    var quote: Quote?
+    
+    func viewDidLoad() {
+        if let receivedQuote = quote {
+            view?.showQuote(forQuote: receivedQuote)
+        }
+    }
+}

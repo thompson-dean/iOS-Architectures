@@ -1,5 +1,5 @@
 //
-//  MainInteractor.swift
+//  HomeInteractor.swift
 //  VIPERArchitecture
 //
 //  Created by Dean Thompson on 2022/08/09.
@@ -18,6 +18,7 @@ class HomeInteractor: HomeInteractorInputProtocol {
     }
     
     func retrieveQuotes() {
+        print("DEBUG: retreive Quotes")
         apiService.fetchQuotes { result in
             switch result {
             case .success(let quotes):

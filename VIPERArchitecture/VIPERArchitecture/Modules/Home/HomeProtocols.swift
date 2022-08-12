@@ -28,6 +28,8 @@ protocol HomePresenterProtocol: AnyObject {
     
     // View -> Presenter functions
     func viewDidLoad()
+    
+    func showQuoteDetail(forQuote quote: Quote)
 }
 
 protocol HomeInteractorOutputProtocol: AnyObject {
@@ -40,5 +42,5 @@ protocol HomeRouterProtocol: AnyObject {
     static func createHomeModule() -> UIViewController
     
     // Presenter -> Router functions
-    
+    func presentDetailScreen(from view: HomeViewProtocol, forQuote quote: Quote)
 }
