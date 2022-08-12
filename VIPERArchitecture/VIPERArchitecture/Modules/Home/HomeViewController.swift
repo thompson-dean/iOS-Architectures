@@ -22,6 +22,9 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         
         homeTableView.delegate = self
         homeTableView.dataSource = self
+        
+        homeTableView.rowHeight = UITableView.automaticDimension
+        homeTableView.estimatedRowHeight = 60
     }
     
     func showQuotes(with quotes: [Quote]) {
@@ -50,9 +53,10 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
+        
         let quote = quotes[indexPath.row]
-        cell.textLabel?.text = quote.quote
+        cell.set(quote: quote)
         
         return cell
     }

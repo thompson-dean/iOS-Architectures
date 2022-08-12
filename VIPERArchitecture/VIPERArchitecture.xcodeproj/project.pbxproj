@@ -24,6 +24,7 @@
 		2A7DEE7828A1DE4500048320 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DEE7728A1DE4500048320 /* DetailPresenter.swift */; };
 		2A7DEE7C28A1DE5300048320 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DEE7B28A1DE5300048320 /* DetailRouter.swift */; };
 		2A7DEE8928A32F0A00048320 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DEE8828A32F0A00048320 /* Quote.swift */; };
+		2ABF56EA28A684DE00AA2C96 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF56E928A684DE00AA2C96 /* HomeTableViewCell.swift */; };
 		2ACFB63028A53F2C0081B696 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACFB62F28A53F2C0081B696 /* HomeProtocols.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		2A7DEE7728A1DE4500048320 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		2A7DEE7B28A1DE5300048320 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		2A7DEE8828A32F0A00048320 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		2ABF56E928A684DE00AA2C96 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		2ACFB62F28A53F2C0081B696 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				2ACFB62F28A53F2C0081B696 /* HomeProtocols.swift */,
 				2A4DF81028A330AD0063F9A7 /* Home.storyboard */,
 				2A7DEE6728A1DDB600048320 /* HomeViewController.swift */,
+				2ABF56E928A684DE00AA2C96 /* HomeTableViewCell.swift */,
 				2A7DEE6928A1DDC700048320 /* HomeInteractor.swift */,
 				2A7DEE6B28A1DDCF00048320 /* HomePresenter.swift */,
 				2A7DEE6F28A1DDE900048320 /* HomeRouter.swift */,
@@ -285,6 +288,7 @@
 			files = (
 				2A7DEE7C28A1DE5300048320 /* DetailRouter.swift in Sources */,
 				2A7DEE7428A1DE3500048320 /* DetailViewController.swift in Sources */,
+				2ABF56EA28A684DE00AA2C96 /* HomeTableViewCell.swift in Sources */,
 				2A7DEE7028A1DDE900048320 /* HomeRouter.swift in Sources */,
 				2A7DEE7828A1DE4500048320 /* DetailPresenter.swift in Sources */,
 				2A7DEE6C28A1DDCF00048320 /* HomePresenter.swift in Sources */,
