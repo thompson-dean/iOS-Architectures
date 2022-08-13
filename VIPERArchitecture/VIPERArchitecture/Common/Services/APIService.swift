@@ -10,15 +10,15 @@ import Foundation
 protocol APIManagerProtocol {
     
     func fetchQuotes(completion: @escaping ((Result<[Quote], Error>) -> Void))
-    
+
 }
 
 class APIService: APIManagerProtocol {
-    
+   
     static let shared = APIService()
     
     func fetchQuotes(completion: @escaping ((Result<[Quote], Error>) -> Void)) {
-        let urlString = "https://thesimpsonsquoteapi.glitch.me/quotes?count=30"
+        let urlString = "https://thesimpsonsquoteapi.glitch.me/quotes?count=50"
         guard let url = URL(string: urlString) else {
             print("DEBUG: invalid URL")
             return
@@ -47,5 +47,4 @@ class APIService: APIManagerProtocol {
         }
         .resume()
     }
-    
 }

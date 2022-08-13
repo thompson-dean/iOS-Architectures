@@ -8,7 +8,7 @@
 import Foundation
 
 class HomeInteractor: HomeInteractorInputProtocol {
-
+    
     weak var presenter: HomeInteractorOutputProtocol?
     
     let apiService: APIService
@@ -28,5 +28,4 @@ class HomeInteractor: HomeInteractorInputProtocol {
             }
         }
     }
-    
 }

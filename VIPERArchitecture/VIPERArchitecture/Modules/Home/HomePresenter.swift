@@ -25,6 +25,7 @@ class HomePresenter: HomePresenterProtocol {
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {
+    
     func didReceiveQuotes(_ quotes: [Quote]) {
      print("DEBUG: Did Receive Quotes")
         view?.showQuotes(with: quotes)

@@ -19,7 +19,6 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-        
     }
     
     func showQuote(forQuote quote: Quote) {

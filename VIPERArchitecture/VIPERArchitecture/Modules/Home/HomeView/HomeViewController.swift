@@ -33,7 +33,6 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         DispatchQueue.main.async {
             self.homeTableView.reloadData()
         }
-        
     }
 }
 
@@ -54,7 +53,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
-        
+
         let quote = quotes[indexPath.row]
         cell.set(quote: quote)
         
