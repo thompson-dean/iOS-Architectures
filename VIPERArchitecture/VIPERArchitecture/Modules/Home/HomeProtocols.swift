@@ -14,13 +14,6 @@ protocol HomeViewProtocol: AnyObject {
     func showQuotes(with quotes: [Quote])
 }
 
-protocol Home2ViewProtocol: AnyObject {
-    var presenter: HomePresenterProtocol? { get set }
-    
-    // Presenter ->  View functions
-    func showQuotes(with quotes: [Quote])
-}
-
 protocol HomeInteractorInputProtocol: AnyObject {
     var presenter: HomeInteractorOutputProtocol? { get set }
     

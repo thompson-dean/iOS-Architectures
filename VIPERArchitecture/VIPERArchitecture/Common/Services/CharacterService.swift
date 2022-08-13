@@ -1,5 +1,5 @@
 //
-//  Characters.swift
+//  CharactersService.swift
 //  VIPERArchitecture
 //
 //  Created by Dean Thompson on 2022/08/13.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-class Characters {
+class CharactersService {
     
-    static let shared = Characters()
+    static let shared = CharactersService()
     
     var characters: [Character] = [
         Character(name: "Homer Simpson", imageUrl: "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FHomerSimpson.png?1497567511939"),
