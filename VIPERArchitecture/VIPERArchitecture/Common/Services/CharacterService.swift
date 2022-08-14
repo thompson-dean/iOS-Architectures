@@ -32,7 +32,7 @@ class CharactersService {
         Character(name: "Frank Grimes", imageUrl: "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FFrankGrimes.png?1497567511887"),
         Character(name: "Mr. Burns", imageUrl: "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FMrBurns.png?1497567512188"),
         Character(name: "Duffman", imageUrl: "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FDuffman.png?1497567511709"),
-        Character(name: "Groundskeeper Willie", imageUrl: "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FNelsonMuntz.png?1497567511185"),
+        Character(name: "Groundskeeper Willie", imageUrl: "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FGroundskeeperWillie.png?1497567512063"),
         Character(name: "Nelson Muntz", imageUrl: "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FNelsonMuntz.png?1497567511185"),
         Character(name: "Waylon Smithers", imageUrl: "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FWaylonSmithers.png?1497567511840")
 

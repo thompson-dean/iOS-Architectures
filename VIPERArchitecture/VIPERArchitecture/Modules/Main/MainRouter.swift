@@ -35,4 +35,12 @@ class MainRouter: MainRouterProtocol {
         print("DEBUG: Did not set child")
         return UIViewController()
     }
+    
+    func presentDetailScreen(from view: HomeViewProtocol, forCharacter character: Character) {
+        let detailViewController = MainDetailRouter.createMainDetailModule(forCharacter: character)
+        
+        if let sourceView = view as? UIViewController {
+            sourceView.navigationController?.pushViewController(detailViewController, animated: true)
+        }
+    }
 }

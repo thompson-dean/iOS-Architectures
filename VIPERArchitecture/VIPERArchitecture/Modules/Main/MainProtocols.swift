@@ -41,4 +41,5 @@ protocol MainRouterProtocol: AnyObject {
     static func createHomeModule() -> UIViewController
     
     // Presenter -> Router functions
+    func presentDetailScreen(from view: HomeViewProtocol, forCharacter character: Character) 
 }
