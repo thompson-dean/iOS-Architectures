@@ -18,11 +18,14 @@ class MainDetailInteractor: MainDetailInteractorInputProtocol {
     }
     
     func retrieveQuotes(character: Character) {
+        print("DEBUG: Interactor Retrieve QUotes")
         apiService.fetchCharacterQuotes(character: character.name) { result in
             switch result {
             case .success(let quotes):
+                print("DEBUG: Interactor success")
                 self.presenter?.didReceiveQuotes(quotes)
             case .failure(let error):
+                print("DEBUG: Interactor failure")
                 self.presenter?.onError(error)
             }
         }

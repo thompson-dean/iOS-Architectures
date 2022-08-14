@@ -20,17 +20,12 @@ class MainViewController: UIViewController, MainViewProtocol {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-
-    }
-    
-    func showQuotes(with quotes: [Quote]) {
-        
     }
 }
 
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tapped \(indexPath.row)")
+        presenter?.showCharacterDetail(forQuote: characters[indexPath.row])
     }
 }
 

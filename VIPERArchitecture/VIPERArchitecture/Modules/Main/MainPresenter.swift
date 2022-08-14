@@ -18,7 +18,7 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     func showCharacterDetail(forQuote character: Character) {
-        
+        router?.presentDetailScreen(from: view!, forCharacter: character)
     }
 }
 

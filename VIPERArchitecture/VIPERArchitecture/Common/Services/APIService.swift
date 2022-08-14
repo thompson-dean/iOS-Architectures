@@ -50,7 +50,7 @@ class APIService: APIManagerProtocol {
     }
     
     func fetchCharacterQuotes(character: String, completion: @escaping ((Result<[Quote], Error>) -> Void)) {
-        let urlString = "https://thesimpsonsquoteapi.glitch.me/quotes?character=\(character)"
+        let urlString = "https://thesimpsonsquoteapi.glitch.me/quotes?count=15&character=\(character.replacingOccurrences(of: " ", with: "%20"))"
         guard let url = URL(string: urlString) else {
             print("DEBUG: invalid URL")
             return

@@ -11,7 +11,6 @@ protocol MainViewProtocol: AnyObject {
     var presenter: MainPresenterProtocol? { get set }
     
     // Presenter ->  View functions
-    func showQuotes(with quotes: [Quote])
 }
 
 protocol MainInteractorInputProtocol: AnyObject {
@@ -41,5 +40,5 @@ protocol MainRouterProtocol: AnyObject {
     static func createHomeModule() -> UIViewController
     
     // Presenter -> Router functions
-    func presentDetailScreen(from view: HomeViewProtocol, forCharacter character: Character) 
+    func presentDetailScreen(from view: MainViewProtocol, forCharacter character: Character)
 }

@@ -27,6 +27,7 @@ class MainDetailViewController: UIViewController, MainDetailViewProtocol {
     }
     
     func showQuotes(with quotes: [Quote]) {
+        print("DEBUG: View received quotes")
         self.quotes = quotes
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -34,6 +35,7 @@ class MainDetailViewController: UIViewController, MainDetailViewProtocol {
     }
     
     func showCharacter(with character: Character) {
+        print("DEBUG: View received Character")
         imageView.kf.setImage(with: URL(string: character.imageUrl))
         label.text = character.name
     }
@@ -48,11 +50,14 @@ extension MainDetailViewController: UITableViewDelegate {
 extension MainDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return quotes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainDetailTableViewCell", for: indexPath) as? MainDetailTableViewCell else { return UITableViewCell() }
+        
+        let quote = quotes[indexPath.row]
+        cell.set(quote: quote)
         
         return cell
         

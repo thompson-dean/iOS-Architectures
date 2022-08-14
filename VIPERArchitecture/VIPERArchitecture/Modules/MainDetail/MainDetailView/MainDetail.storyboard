@@ -23,7 +23,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homer SImpson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qh8-rz-Egl">
-                                <rect key="frame" x="8" y="340" width="398" height="30"/>
+                                <rect key="frame" x="16" y="340" width="382" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="nLs-5h-wIb"/>
                                 </constraints>
@@ -56,6 +56,9 @@
                                                 <constraint firstItem="kc8-qP-58A" firstAttribute="leading" secondItem="04z-EN-gX9" secondAttribute="leadingMargin" id="o1G-Ot-UuA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="kc8-qP-58A" id="kOj-Xq-QtW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -67,12 +70,12 @@
                             <constraint firstItem="Guf-Mr-jQM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="HdV-sr-gLF"/>
                             <constraint firstItem="Guf-Mr-jQM" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Hf4-Ro-Wf4"/>
                             <constraint firstItem="Guf-Mr-jQM" firstAttribute="top" secondItem="Qh8-rz-Egl" secondAttribute="bottom" constant="8" symbolic="YES" id="Mro-bF-QO2"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Qh8-rz-Egl" secondAttribute="trailing" constant="8" id="N8Z-RN-9EU"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Qh8-rz-Egl" secondAttribute="trailing" constant="16" id="N8Z-RN-9EU"/>
                             <constraint firstItem="Qh8-rz-Egl" firstAttribute="top" secondItem="hbd-Gh-ryP" secondAttribute="bottom" constant="8" id="VXs-6V-OIO"/>
                             <constraint firstItem="hbd-Gh-ryP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="cQB-ZC-Kcj"/>
                             <constraint firstItem="Guf-Mr-jQM" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="kRU-oa-bsI"/>
                             <constraint firstItem="hbd-Gh-ryP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="luk-TD-xfi"/>
-                            <constraint firstItem="Qh8-rz-Egl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="oi9-nR-gEh"/>
+                            <constraint firstItem="Qh8-rz-Egl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="oi9-nR-gEh"/>
                         </constraints>
                     </view>
                     <connections>

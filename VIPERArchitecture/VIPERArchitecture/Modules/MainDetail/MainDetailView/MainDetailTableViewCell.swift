@@ -9,4 +9,9 @@ import UIKit
 
 class MainDetailTableViewCell: UITableViewCell {
     
+    @IBOutlet var label: UILabel!
+    
+    func set(quote: Quote) {
+        label.text = "\(quote.quote)"
+    }
 }

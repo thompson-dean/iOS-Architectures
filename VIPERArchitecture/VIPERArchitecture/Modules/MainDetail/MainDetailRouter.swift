@@ -26,6 +26,7 @@ class MainDetailRouter: MainDetailRouterProtocol {
             presenter.view = view
             presenter.character = character
             presenter.router = router
+            presenter.interactor = interactor
             interactor.presenter = presenter
             
             return viewController

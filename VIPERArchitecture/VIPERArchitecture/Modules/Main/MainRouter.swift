@@ -36,7 +36,7 @@ class MainRouter: MainRouterProtocol {
         return UIViewController()
     }
     
-    func presentDetailScreen(from view: HomeViewProtocol, forCharacter character: Character) {
+    func presentDetailScreen(from view: MainViewProtocol, forCharacter character: Character) {
         let detailViewController = MainDetailRouter.createMainDetailModule(forCharacter: character)
         
         if let sourceView = view as? UIViewController {

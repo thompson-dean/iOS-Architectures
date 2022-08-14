@@ -30,7 +30,6 @@ protocol MainDetailPresenterProtocol: AnyObject {
     
     // View -> Presenter functions
     func viewDidLoad()
-    func showQuoteDetail(forQuote quote: Quote)
 }
 
 protocol MainDetailInteractorOutputProtocol: AnyObject {
