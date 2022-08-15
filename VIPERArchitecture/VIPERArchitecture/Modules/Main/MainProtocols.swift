@@ -17,7 +17,6 @@ protocol MainInteractorInputProtocol: AnyObject {
     var presenter: MainInteractorOutputProtocol? { get set }
     
     // Presenter -> Interactor functions
-    func retrieveQuotes()
 }
 
 protocol MainPresenterProtocol: AnyObject {

@@ -13,6 +13,6 @@ class HomeTableViewCell: UITableViewCell {
     
     func set(quote: Quote) {
         self.selectionStyle = .none
-        quoteLabel.text = quote.quote
+        quoteLabel.text = "\"\(quote.quote)\""
     }
 }

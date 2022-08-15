@@ -12,6 +12,6 @@ class MainDetailTableViewCell: UITableViewCell {
     @IBOutlet var label: UILabel!
     
     func set(quote: Quote) {
-        label.text = "\(quote.quote)"
+        label.text = "\"\(quote.quote)\""
     }
 }

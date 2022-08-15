@@ -23,8 +23,8 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     
     func showQuote(forQuote quote: Quote) {
         let imageURL = URL(string: quote.image)
-        characterImageView.kf.setImage(with: imageURL, placeholder: UIImage(systemName: "hourglass"))
+        characterImageView.kf.setImage(with: imageURL)
         characterNameLabal.text = quote.character
-        quoteLabel.text = quote.quote
+        quoteLabel.text = "\"\(quote.quote)\""
     }
 }

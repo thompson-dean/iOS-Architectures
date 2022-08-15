@@ -11,7 +11,4 @@ class MainInteractor: MainInteractorInputProtocol {
     
     var presenter: MainInteractorOutputProtocol?
     
-    func retrieveQuotes() {
-        
-    }
 }
