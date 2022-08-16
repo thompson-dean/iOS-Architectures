@@ -25,6 +25,8 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         
         homeTableView.rowHeight = UITableView.automaticDimension
         homeTableView.estimatedRowHeight = 60
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func showQuotes(with quotes: [Quote]) {
