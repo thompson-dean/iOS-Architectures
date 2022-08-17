@@ -20,6 +20,6 @@ class TabBarController: UITabBarController {
         
         self.tabBar.tintColor = .systemYellow
         
-        self.setViewControllers([quoteVC, characterVC], animated: false)
+        self.setViewControllers([characterVC, quoteVC], animated: false)
     }
 }
